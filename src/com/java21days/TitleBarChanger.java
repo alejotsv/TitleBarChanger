@@ -28,6 +28,7 @@ public class TitleBarChanger extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
+        System.out.println(actionEvent.getActionCommand());
         JButton btn = (JButton) actionEvent.getSource();
         String text = btn.getText();
         this.setTitle(text);
