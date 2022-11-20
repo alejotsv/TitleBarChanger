@@ -10,11 +10,26 @@ public class TitleBarChanger extends JFrame implements ActionListener {
 
     TitleBarChanger(){
         super("Guildenstern");
+        setSize(dim);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        JButton btn1 = new JButton("Guildenstern");
+        btn1.addActionListener(this);
+        JButton btn2 = new JButton("Rosencrantz");
+        btn2.addActionListener(this);
+        JPanel panel = new JPanel();
+        panel.add(btn1);
+        panel.add(btn2);
+        add(panel);
+        setVisible(true);
+        pack();
     }
 
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
-        System.out.println("I was clicked");
+        JButton btn = (JButton) actionEvent.getSource();
+        String text = btn.getText();
+        this.setTitle(text);
     }
 }
